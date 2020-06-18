@@ -1,39 +1,39 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from "react-redux";
 import { List, Image } from 'semantic-ui-react'
 
-const VideoList = props => {
-    return (
-        <div className='video-list'>
-            <List animated verticalAlign='middle'>
-                <List.Item>
-                    <Image avatar src='' />
+class VideoList extends Component {
 
-                    <List.Content>
-                        <List.Header>Titulo do Video</List.Header>
-                    </List.Content>
-                </List.Item>
+    renderVideo(video) {
+        return (
+            <div className='video-list'>
+                <List animated verticalAlign='middle'>
+                    <List.Item>
+                        <Image src={video.snippet.thumbnails.default.url} />
 
-                <List.Item>
-                    <Image avatar src='' />
+                        <List.Content>
+                            <List.Header>{video.snippet.title}</List.Header>
+                        </List.Content>
+                    </List.Item>
+                </List>
+            </div>
+        )
+    }
 
-                    <List.Content>
-                        <List.Header>Titulo do Video</List.Header>
-                    </List.Content>
-                </List.Item>
+    render() {
+        return (
+            <div className='video-list'>
+                {
+                    this.props.videos.map(video => {
+                        console.log('meu video', video)
+                        return this.renderVideo(video)
+                    })
+                }
+            </div>
+        )
+    }
 
-                <List.Item>
-                    <Image avatar src='' />
 
-                    <List.Content>
-                        <List.Header>Titulo do Video</List.Header>
-                    </List.Content>
-                </List.Item>
-
-            </List>
-    <p>{JSON.stringify(props)}</p>
-        </div>
-    )
 }
 
 const mapStateToProps = (state) => {
