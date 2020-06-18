@@ -5,6 +5,12 @@ import {buscaVideo} from '../store/actions/busca-video'
 
 class SearchBar extends Component {
 
+    constructor(props){
+        super(props)
+
+        //on load
+        this.props.buscaVideo('ikimono gakari sakura')
+    }
     pesquisaTermo = e => {
         
         if(e.keyCode === 13) {
