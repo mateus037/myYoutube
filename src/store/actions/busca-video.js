@@ -1,13 +1,12 @@
 import youtubeSearch from 'youtube-api-v3-search'
 import YTApi from './../../service/api'
-import { dispatch } from "rxjs/internal/observable/range";
 
 const API_KEY = YTApi
 
 export const buscaVideoInicio = () => {
     return {
         type:'BUSCA_VIDEO_INICIO',
-        carrregando: true,
+        carregando: true,
         erro: false
     }
 }
@@ -16,7 +15,7 @@ export const buscaVideoSucesso = (videos) => {
     return {
         type: 'BUSCA_VIDEO_SUCESSO',
         videos,
-        carrregando: false,
+        carregando: false,
         erro: false
     }
 }
