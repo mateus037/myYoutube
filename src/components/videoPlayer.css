@@ -1,0 +1,11 @@
+.video-are{
+    display: flex;
+  flex-direction: column;
+
+
+}
+
+.video-are span{
+    background-color: cadetblue;
+    margin: 10px;
+}

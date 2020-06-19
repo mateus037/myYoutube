@@ -1,23 +1,117 @@
+{/* 
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .App {
+  margin: 0;
   display: grid;
+  grid-template-columns: 1fr 500px;
+  grid-template-rows:
+        80px
+        1fr;
   grid-template-areas: 
-  'search-bar search-bar search-bar search-bar'
-  'video-player video-player video-player video-list'
-  'video-player video-player video-player video-list'
+  'search-bar search-bar'
+  'video-player video-list';
+  height: 100vh;
+  background-color: #F1E7E7; 
+ background-color: blue;
 }
 
 .search-bar {
   grid-area: search-bar;
-  background-color: brown;
+  background-color: rgba(165, 42, 42, 0.26);
 }
 
 .video-player {
   grid-area: video-player;
-  background-color: aqua;
+ 
+  background-color: rgba(61, 42, 165, 0.199);
 }
 
 .video-list {
   grid-area: video-list;
-  background-color: #FFFACD;
+  background-color: rgba(238, 0, 0, 0.329);
   padding: 15px;
+
+}
+
+.video-titulo{
+  font-weight: 400;
+  color: #468284;
+  padding: 10px;
+}
+
+.video-descricao {
+  padding: 10px;
+  color: #0000CD
+}
+
+@media(max-width: 1194px) {
+  .App {
+      grid-template-rows:
+          80px
+          1fr
+          1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+      'search-bar'
+      'video-player'
+      'video-list';
+  }
+}
+*/}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+.App{
+  display: grid;
+  grid-template-rows: 15vh 90vh;
+  grid-template-areas: "header header header" "content content aside";
+background-color: aqua;
+padding: 10px;
+/*min-width: 634px;  aquii */
+
+}
+
+.search-bar{
+  grid-area: header;
+  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.video-list{
+  grid-area: aside;
+  background-color: blueviolet;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-player{
+  grid-area: content;
+  background-color: rgb(95, 42, 165);
+
+}
+
+/* Breakpoints */
+
+@media screen and (max-width: 847px){
+  .App{
+    grid-template-areas: "header" "content" "aside";
+    grid-template-rows: 15vh 70vh 70vh;
+  }
+
+  .search-bar{
+    padding: 5px;
+  }
+
 }
