@@ -15,6 +15,7 @@ class VideoList extends Component {
                         <List.Header>{video.snippet.title}</List.Header>
                     </List.Content>
                 </List.Item>
+                
             </List>
         )
     }

@@ -6,25 +6,40 @@ import './videoPlayer.css'
 const VideoPlayer = props => {
     return (
         <div className='video-player'>
-            
-            
+
+
             {
                 !props.video.id && (
-                    <Advertisement style={{ 'height': '473px', 'width': '840px' }} unit='top banner' test='Escolha um video para reproduzir' />
+                    <Advertisement style={{ 'height': '473px', 'width': '720px' }} className="video" unit='top banner' test='Escolha um video para reproduzir' />
                 )
             } {
                 props.video.id && (
                     <div className='video-are'>
-                        <Embed id={props.video.id.videoId} 
-                        source='youtube' placeholder={props.video.snippet.thumbnails.medium.url} />
-                        <span>
-                        <p className='video-titulo'>{props.video.snippet.title}</p>
-                        <p className='video-descricao'>{props.video.snippet.description}</p>
-                        </span>
+
+                        <div className="video">
+                            <Embed id={props.video.id.videoId}
+                                autoplay={false}
+                                color='white'
+                                hd={false}
+
+                                iframe={{
+                                    allowFullScreen: true,
+                                    style: {
+                                        padding: 10,
+                                    },
+                                }}
+
+                                source='youtube' placeholder={props.video.snippet.thumbnails.medium.url} />
+                        </div>
+                        <article>
+                            <p className='video-titulo'>{props.video.snippet.title}</p>
+                            <p className='video-descricao'>{props.video.snippet.description}</p>
+                        </article>
+
                     </div>
                 )
             }
-        
+
         </div>
     )
 }

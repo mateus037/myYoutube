@@ -1,11 +1,34 @@
 .video-are{
+
     display: flex;
-  flex-direction: column;
-
-
+    flex-direction: column;
+    align-items: initial;
+    align-content: space-around;
+   /* background-color: aqua; */
+    max-width: 720px;
 }
 
-.video-are span{
-    background-color: cadetblue;
+.video-are .video{
+    
+    width: 80%;
+    min-width: 720px;
+    
+    background-color: rgba(8, 8, 8, 0.247);
+}
+
+.video-are article{
+    
     margin: 10px;
+    
+    padding: 10px;
+    background-color: rgba(8, 8, 8, 0.247);
+    border-radius: 10px;
 }
+
+@media screen and (max-width: 414px){
+    .video-are article{
+        
+        margin: 10px;
+    }
+  }
+  
