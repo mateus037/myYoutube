@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Advertisement, Embed } from "semantic-ui-react";
+import { Advertisement, Embed, Segment, Responsive } from "semantic-ui-react";
 import './videoPlayer.css'
 
 const VideoPlayer = props => {
@@ -14,13 +14,13 @@ const VideoPlayer = props => {
                 )
             } {
                 props.video.id && (
-                    <div className='video-are'>
+                    <Responsive>
 
                         <div className="video">
                             <Embed id={props.video.id.videoId}
-                                autoplay={false}
-                                color='white'
-                                hd={false}
+                                autoplay={true}
+                                color='blue'
+                                hd={true}
 
                                 iframe={{
                                     allowFullScreen: true,
@@ -31,12 +31,13 @@ const VideoPlayer = props => {
 
                                 source='youtube' placeholder={props.video.snippet.thumbnails.medium.url} />
                         </div>
-                        <article>
+                        <Segment placeholder raised>
+                        
                             <p className='video-titulo'>{props.video.snippet.title}</p>
                             <p className='video-descricao'>{props.video.snippet.description}</p>
-                        </article>
-
-                    </div>
+                       
+                        </Segment>
+                        </Responsive>
                 )
             }
 

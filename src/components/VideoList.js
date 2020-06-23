@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from "react-redux";
-import { List, Image, Dimmer, Loader } from 'semantic-ui-react'
+import { List, Image, Dimmer, Loader, Segment, Responsive } from 'semantic-ui-react'
 import { reproduzVideo } from "../store/actions/reproduz.video";
 import "./videoList.css";
 
@@ -8,14 +8,20 @@ class VideoList extends Component {
 
     renderVideo(video) {
         return (
-            <List animated verticalAlign='middle' className='items' key={video.etag}>
-                <List.Item onClick={() => this.props.reproduz(video)}>
+            <List selection verticalAlign='middle' className='items' key={video.etag}>
+                <List.Item onClick={() => this.props.reproduz(video)} active>
                     <Image src={video.snippet.thumbnails.default.url} />
-                    <List.Content>
-                        <List.Header>{video.snippet.title}</List.Header>
-                    </List.Content>
+                    <Responsive >
+                        <List.Content>
+                            <List.Header>
+                                <p>
+                                    {video.snippet.title}
+                                </p>
+                            </List.Header>
+                        </List.Content>
+                    </Responsive>
                 </List.Item>
-                
+
             </List>
         )
     }
@@ -23,7 +29,8 @@ class VideoList extends Component {
     render() {
         return (
             <div className='video-list'>
-                <div className='lista'>
+                <Segment tertiary raised>
+                <Responsive >
 
                     {
                         this.props.carregando && (<Dimmer active inverted>
@@ -35,7 +42,8 @@ class VideoList extends Component {
                             return this.renderVideo(video)
                         })
                     }
-                </div>
+                </Responsive>
+                </Segment>
             </div>
         )
     }

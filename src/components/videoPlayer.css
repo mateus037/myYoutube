@@ -25,10 +25,9 @@
     border-radius: 10px;
 }
 
-@media screen and (max-width: 414px){
-    .video-are article{
-        
-        margin: 10px;
+@media screen and (max-width: 1040px){
+    .video-titulo{
+        font-size: 37px;
+        font-weight: bolder;
     }
   }
-  
