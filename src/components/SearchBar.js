@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Segment, Input } from 'semantic-ui-react';
 import { connect } from "react-redux";
 import { buscaVideo } from '../store/actions/busca-video';
-import logo from '../logo.png';
+import logo from '../myYoutube.png';
 import './SearchBar.css';
 
 class SearchBar extends Component {

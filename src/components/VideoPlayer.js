@@ -10,7 +10,7 @@ const VideoPlayer = props => {
 
             {
                 !props.video.id && (
-                    <Advertisement style={{ 'height': '473px', 'width': '720px' }} className="video" unit='top banner' test='Escolha um video para reproduzir' />
+                    <Advertisement style={{ 'height': '473px', 'width': '850px' }} className="video" unit='top banner' test='Escolha um video para reproduzir' />
                 )
             } {
                 props.video.id && (
@@ -19,7 +19,7 @@ const VideoPlayer = props => {
                         <div className="video">
                             <Embed id={props.video.id.videoId}
                                 autoplay={true}
-                                color='blue'
+                                color='white'
                                 hd={true}
 
                                 iframe={{

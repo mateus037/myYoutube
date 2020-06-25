@@ -9,7 +9,7 @@ class VideoList extends Component {
     renderVideo(video) {
         return (
             <List selection verticalAlign='middle' className='items' key={video.etag}>
-                <List.Item onClick={() => this.props.reproduz(video)} active>
+                <List.Item onClick={() => this.props.reproduz(video)}>
                     <Image src={video.snippet.thumbnails.default.url} />
                     <Responsive >
                         <List.Content>
